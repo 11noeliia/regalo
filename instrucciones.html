@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cuenta Regresiva</title>
+  <style>
+    /* Estilos CSS */
+    .countdown {
+      text-align: center;
+      font-size: 3em;
+    }
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #f2f2f2;
+      color: #333333;
+      text-decoration: none;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+    body {
+      text-align: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+    }
+  </style>
+</head>
+<body>
+  <h1>Nos vemos en el punto de inicio</h1>
+  <br>
+  Saldremos de Villena sobre las 19:30 / 20:00 pm (desde mi casa). Para llegar al punto de inicio como mucho a las 21:00h (pm).
+  <h2>Cosas a tener en cuenta:</h2>
+  <p>Preparate la maleta, la cual usaste para irnos a Bruselas, procura llevarte conjuntos tanto de verano como si hace fresco.<br>
+  Puede que haga tanto calor como frío.</p>
+  <h4>Maleta:</h4>
+  <ul>
+    <li>Ropa interior y bañadores.</li>
+    <li>Ropa verano.</li>
+    <li>Ropa fresco: Sudaderas, cortaviento (si quieres) , 1 chaqueta.</li>
+    <li>Neceser: Cepillo, pasta de dientes, colonia, desodorante...</li>
+    <li>Zapatillas puestas para montaña y cómodas, 1 chanclas o escarpines.</li>
+    <li>Cartera: Dni, documentación necesaria.</li>
+    <li>Ropa de arreglar y lo que tu consideres.</li>
+  </ul>
+  <h4>Cosas a tener en cuenta:</h4>
+  <li>Actitud</li>
+  <li>Ganas</li>
+  <h4>Disfruta de tu regalo, nos vemos en.... ;)</h4>
+
+  <div class="countdown" id="countdown"></div>
+
+  <script>
+    // Fecha objetivo
+    var targetDate = new Date("July 6, 2023 00:00:00").getTime();
+
+    // Actualizar la cuenta regresiva cada segundo
+    var countdownTimer = setInterval(function() {
+      var now = new Date().getTime();
+
+      // Diferencia entre la fecha objetivo y la fecha actual
+      var distance = targetDate - now;
+
+      // Cálculos de tiempo para días, horas, minutos y segundos
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Mostrar la cuenta regresiva en el elemento con id "countdown"
+      document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+
+      // Cuando la cuenta regresiva llega a cero, mostrar un mensaje
+      if (distance < 0) {
+        clearInterval(countdownTimer);
+        document.getElementById("countdown").innerHTML = "¡Ha llegado el momento!";
+      }
+    }, 1000);
+  </script>
+  <br>
+  <a href="regalo.html" class="button">Volver al inicio</a>
+</body>
+</html>

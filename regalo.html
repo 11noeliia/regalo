@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="estilosregalo.css">
+  <title>Regalo Luis</title>
+  
+</head>
+<body>
+  <div class="container">
+    <h1>Tu regalo en:</h1>
+    <div id="countdown">00:00:00:00</div>
+    
+    <script>
+      // Fecha objetivo
+      var targetDate = new Date("July 6, 2023 00:00:00").getTime();
+  
+      // Actualizar la cuenta regresiva cada segundo
+      var countdownTimer = setInterval(function() {
+        var now = new Date().getTime();
+  
+        // Diferencia entre la fecha objetivo y la fecha actual
+        var distance = targetDate - now;
+  
+        // Cálculos de tiempo para días, horas, minutos y segundos
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  
+        // Mostrar la cuenta regresiva en el elemento con id "countdown"
+        document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+  
+        // Cuando la cuenta regresiva llega a cero, mostrar un mensaje
+        if (distance < 0) {
+          clearInterval(countdownTimer);
+          document.getElementById("countdown").innerHTML = "¡Ha llegado el momento!";
+        }
+      }, 1000);
+    </script>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <a href="siguientepista.html" class="button">Pistas</a>
+  </div>
+  
+</body>
+</html>
